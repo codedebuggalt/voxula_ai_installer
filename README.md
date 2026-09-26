@@ -1,77 +1,118 @@
-SPEAK — Voice Dictation & Companion
-Version 2.1 — Amir Bagawan — Minimalist fullscreen
+# 🎙️ SPEAK — Voice Dictation & Companion
 
-FREE TO USE — ONE FILE, DONE
-SPEAK works out of the box — no key needed (free tier active). For unlimited usage,
-add your own Gemini API key in Settings > Setup > Primary API key.
+**Version 2.1** · by Amir Bagawan · Minimalist fullscreen app
 
-QUICK START
-0. WINDOWS MAY WARN "Unknown publisher" — this build is unsigned (normal for
-   new independent software). Click "More info" > "Run anyway", once per
-   version. Nothing is installed silently: Start Menu + optional Desktop icons.
-1. Double-click SPEAK_Setup_v2.1.exe and follow the wizard (no admin needed).
-2. Launch SPEAK from Start Menu or Desktop (if you checked the box).
-   Settings opens natively fullscreen with a collapsible sidebar.
-3. OPTIONAL: Paste your Google Gemini API key (AIzaSy...) and click Test, then Save.
-   Get a key at https://aistudio.google.com/app/apikey
-   If you add your key, SPEAK uses yours. Otherwise free tier is used silently.
-4. Press Ctrl + Space to dictate — text types at your cursor in any app.
-   Press Ctrl + Space again to stop.
-5. Press Ctrl + Tab to spawn + switch to a new live session instantly.
-   Sessions tab shows active count + stored metadata; oldest evicts first (FIFO, default Max 5).
-6. Press Ctrl + / for companion (voice + optional screen). Toggle screen in the capsule.
-7. Press Ctrl + Win to clear memory. Press Esc to stop live only (app keeps running).
+---
 
-PERMISSIONS (asked on first run — installer cannot grant these, Windows requires in-app approval)
-- MICROPHONE: on launch SPEAK checks mic access. If blocked you get a tray
-  alert + Settings banner. Click Grant Permission (opens Windows Privacy >
-  Microphone), allow access, then Grant again to retry.
-- SCREEN: on first screen share, SPEAK checks OS permission BEFORE starting capture.
-  If pending/denied, a banner appears in Settings with a Grant Permission button.
-  Click it to trigger the native OS prompt, approve, then click again to retry.
-  One Grant click requests BOTH mic and screen.
-- Voice continues even when screen is blocked. Dictation needs the mic.
-- Blank frames from the AI means permission is still blocked — fix it here first.
+## Free to Use
 
-MESSAGE VERIFICATION (Settings > Preferences)
-- Auto-Send (default): requireVerification=False, autoSubmit=True — type + Enter automatically.
-- Verification Active (opt-in): requireVerification=True, autoSubmit=False — type, wait for Enter.
-- Agent reasoning: Low / Medium (default) / High (Settings > Preferences > Agent Reasoning).
-- Live locks enforced: Transcription SMART, tool typeTextAtCursor.
+SPEAK works right out of the box — no API key required. Want unlimited usage? Just add your own free Gemini API key in **Settings → Setup → Primary API key**.
 
-SELF-TESTS (Settings > Preferences)
-- Microphone card > Test speaker: plays a two-tone beep through the real
-  reply path. Clear beep = speaker wiring correct.
-- Live Screen card > Test capture: grabs one frame, shows KB size + tokens.
-  Proves vision frames actually flow. Blank = permission still blocked.
-- If anything misbehaves, open %APPDATA%\SPEAK_AI\logs\ and send the newest
-  speak-*.log — it records every session event.
+---
 
-CAPSULE
-- Hotkeys open the mini pill first. Click it (or the maximize button) to expand
-  the full capsule. Close-only, stays on top. Appears only on hotkey. Find SPEAK in tray near the clock.
-- Transcript panel: copy, clear, refine/polish/elaborate + customs. Screen button toggles vision.
-- Status text elides gracefully, full text in tooltip. Panel never slides under taskbar.
+## 🚀 Quick Start
 
-REFINE
-- Say "refine", "polish", "elaborate" (or old "expand") or tap capsule buttons.
-- Refined text replaces what was just typed — no extra Enter needed.
-- Works multilingual (auto-detect).
+1. **Install it.** Double-click `SPEAK_Setup_v2.1.exe` and follow the wizard. No admin rights needed.
 
-HELP TAB
-- Settings > Help: step-by-step for Screen Share / Transcription / Smart Insertion,
-  shortcut cheat sheet table, and quick fixes for cursor focus + permissions.
+   > 💡 Windows might show an "Unknown publisher" warning — that's normal for new independent apps. Just click **More info → Run anyway**. Nothing installs silently; you'll get a Start Menu entry and an optional Desktop icon.
 
-TIPS
-- The floating capsule appears only when you use a hotkey.
-- In Settings > Preferences add Custom words (names, products) and your Mark.
-- Backup keys: Settings > Setup — auto switches on quota. List shows masked previews only.
-- Publisher: Amir Bagawan
+2. **Launch it** from the Start Menu or Desktop. Settings opens fullscreen with a handy collapsible sidebar.
 
-PRIVACY & SAFETY
-- Keys in Windows Credential Manager (never plain files). Only sent to Google.
-- Single-instance guard prevents double mic/hotkeys. Injection never types when SPEAK is focused.
-- No admin install. Startup launch is opt-in only.
+3. **(Optional) Add your API key.** Paste your Gemini key (starts with `AIzaSy...`), hit **Test**, then **Save**. Grab a free key at [aistudio.google.com/app/apikey](https://aistudio.google.com/app/apikey).
 
-UNINSTALL
-Settings > Apps > SPEAK > Uninstall.
+4. **Start dictating** — press `Ctrl + Space`. Your words appear right where your cursor is, in any app. Press it again to stop.
+
+5. **Multitask with sessions** — `Ctrl + Tab` spawns and switches to a new live session instantly. The Sessions tab shows what's active; oldest sessions get replaced first (max 5 by default).
+
+6. **Talk to your companion** — `Ctrl + /` opens voice (and optional screen sharing). Toggle screen sharing right from the capsule.
+
+7. **Reset when needed** — `Ctrl + Win` clears memory. `Esc` stops live dictation (app keeps running in background).
+
+---
+
+## 🔐 Permissions
+
+Windows requires you to approve these yourself — the installer can't do it for you.
+
+**Microphone**
+On first launch, SPEAK checks for mic access. If it's blocked, you'll see a tray alert and a banner in Settings. Click **Grant Permission** to open Windows' privacy settings, allow access, then click **Grant** again to confirm.
+
+**Screen Sharing**
+Same idea — SPEAK checks for screen permission before capturing anything. If it's pending or denied, you'll see a banner with a **Grant Permission** button. One click triggers the native prompt for *both* mic and screen.
+
+> ℹ️ Voice dictation still works even if screen sharing is blocked (dictation only needs the mic). If the AI shows blank frames, that means screen permission still isn't granted — fix it in Settings first.
+
+---
+
+## ✉️ Message Verification
+
+Found in **Settings → Preferences**:
+
+| Mode | Behavior |
+|---|---|
+| **Auto-Send** *(default)* | Types your message and hits Enter automatically |
+| **Verification Active** | Types your message, waits for you to hit Enter |
+
+You can also tune **Agent Reasoning** (Low / Medium / High) here. Live sessions always use smart transcription and cursor-aware typing.
+
+---
+
+## 🧪 Self-Tests
+
+Also in **Settings → Preferences**:
+
+- **Test speaker** (Microphone card) — plays a two-tone beep through the real audio path. Hear it clearly? Your speaker setup is good.
+- **Test capture** (Live Screen card) — grabs one frame and shows its size + token count. This confirms vision is actually working. A blank result means permission is still blocked.
+
+Something acting weird? Check `%APPDATA%\SPEAK_AI\logs\` and send over the newest `speak-*.log` file — it logs every session event.
+
+---
+
+## 💊 The Capsule
+
+Your hotkeys first open a small pill-shaped indicator — click it (or the maximize button) to expand the full capsule. It stays on top, closes on demand, and only shows up when you trigger a hotkey. You can also find SPEAK sitting quietly in your system tray.
+
+Inside, you'll find a transcript panel (copy, clear, or refine your text) and a screen toggle button. Long status messages truncate neatly, with the full text available on hover.
+
+---
+
+## ✨ Refine Your Text
+
+Just say **"refine"**, **"polish"**, or **"elaborate"** — or tap the buttons in the capsule. Your refined text swaps in automatically, no extra Enter needed. Works in multiple languages, auto-detected.
+
+---
+
+## ❓ Need Help?
+
+Head to **Settings → Help** for:
+- Step-by-step guides for Screen Share, Transcription, and Smart Insertion
+- A full shortcut cheat sheet
+- Quick fixes for cursor focus and permission issues
+
+---
+
+## 💡 Tips
+
+- The capsule only appears when you actually use a hotkey — it won't clutter your screen otherwise.
+- Add custom words (names, product terms) and your personal signature in **Settings → Preferences**.
+- Set up backup API keys in **Settings → Setup** — SPEAK automatically switches over when you hit a quota limit. Keys are always shown masked.
+
+---
+
+## 🔒 Privacy & Safety
+
+- Your API keys live safely in Windows Credential Manager — never in plain text files.
+- Keys are only ever sent to Google, nowhere else.
+- A single-instance guard prevents duplicate mics or conflicting hotkeys.
+- SPEAK never types into itself when it's the focused window.
+- No admin install required. Startup-on-boot is entirely opt-in.
+
+---
+
+## 🗑️ Uninstalling
+
+Go to **Settings → Apps → SPEAK → Uninstall**. That's it.
+
+---
+
+*Made by Amir Bagawan*
